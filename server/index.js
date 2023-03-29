@@ -42,10 +42,36 @@ wss.on("connection", (ws) => {
 					}
 				});
 				break;
+			case "SCROLL":
+				wss.clients.forEach((client) => {
+					if (client !== ws) {
+						client.send(createMsg("SCROLL", {}));
+					}
+				});
 			case "SPEED":
-			case "START":
-			case "STOP":
-			case "SIZE":
+				let speed = msg.payload.speed;
+				wss.clients.forEach((client) => {
+					if (client !== ws) {
+						client.send(createMsg("SPEED", { speed }));
+					}
+				});
+				break;
+			case "FS":
+				let fs = msg.payload.fs;
+				wss.clients.forEach((client) => {
+					if (client !== ws) {
+						client.send(createMsg("FS", { fs }));
+					}
+				});
+				break;
+			case "LH":
+				let ls = msg.payload.ls;
+				wss.clients.forEach((client) => {
+					if (client !== ws) {
+						client.send(createMsg("LH", { ls }));
+					}
+				});
+				break;
 			case "RESET":
 		}
 	});
