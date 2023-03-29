@@ -9,7 +9,11 @@
 <div id="container">
 	<div id="nav-container">
 		<nav>
-			<a href="/">StageManager</a>
+			<a href="/"
+				>StageManager <span style="font-weight: 200; font-style:italic"
+					>by Armin</span
+				></a
+			>
 			<a href="https://github.com/arm-out/StageManager"
 				><svg width="24" height="24" fill="currentColor" viewBox="3 3 18 18"
 					><title>GitHub</title><path
@@ -63,7 +67,7 @@
 			>
 		</div>
 		<div id="vc">
-			<video autoplay loop>
+			<video autoplay muted loop>
 				<source src="/preview.mp4" />
 			</video>
 		</div>
